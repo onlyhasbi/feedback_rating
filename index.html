@@ -11,72 +11,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles/styles.css">
 
   <title>Frontend Mentor | Interactive rating component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
 
-  <div class="container-bg">
-
-    <div class="container" id="rating">
-      <div class="starIcon">
+  <main>
+    <section class="container" id="rating">
+      <div class="rating-icon">
         <img src="./images/icon-star.svg" alt="">
       </div>
-      <h1 class="title">How did we do?</h1>
-      <p class="description">
+      <h1 class="rating-title">How did we do?</h1>
+      <p class="rating-description">
         Please let us know how we did with your support request. All feedback is appreciated
         to help us improve our offering!
       </p>
 
-      <ul class="rating">
-        <li class="ratingItem">1</li>
-        <li class="ratingItem">2</li>
-        <li class="ratingItem">3</li>
-        <li class="ratingItem">4</li>
-        <li class="ratingItem">5</li>
+      <ul class="rating-group">
+        <li class="rating-value">1</li>
+        <li class="rating-value">2</li>
+        <li class="rating-value">3</li>
+        <li class="rating-value">4</li>
+        <li class="rating-value">5</li>
       </ul>
-      <button class="buttonSubmit">Submit</button>
-    </div>
+      <button class="rating-submit">Submit</button>
+    </section>
 
-    <dialog class="container thanks" id="thankYou">
+    <dialog class="container done" id="done">
 
-      <div class="illustration">
+      <div class="done-image">
         <img src="./images/illustration-thank-you.svg" alt="">
       </div>
 
-      <div class="ratingCount">
-        <p>You selected <span id="ratingNumber">0</span> out of 5</p>
+      <div class="done-info">
+        <p>You selected <span id="done-value">0</span> out of 5</p>
       </div>
 
-      <h1 class="title">Thank you!</h1>
-      <p class="description thanksDescription">
+      <h1 class="done-title">Thank you!</h1>
+      <p class="done-description">
         We appreciate you taking the time to give a rating. If you ever need more support,
         don’t hesitate to get in touch!
       </p>
     </dialog>
+  </main>
 
-  </div>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Hasbi</a>.
-  </div>
-
-  <script src="./script.js"></script>
+  <script src="./script/script.js"></script>
 </body>
 
 </html>
