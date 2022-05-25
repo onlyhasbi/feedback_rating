@@ -14,51 +14,74 @@
   <link rel="stylesheet" href="./styles/styles.css">
 
   <title>Frontend Mentor | Interactive rating component</title>
+  <script src="./script/script.js" defer></script>
 
 </head>
 
 <body>
+  <main class="container" id="rating">
+    <div class="rating-icon">
+      <img src="./images/icon-star.svg" alt="">
+    </div>
 
-  <main>
-    <section class="container" id="rating">
-      <div class="rating-icon">
-        <img src="./images/icon-star.svg" alt="">
-      </div>
-      <h1 class="rating-title">How did we do?</h1>
-      <p class="rating-description">
+    <div class="rating-content">
+      <h1 class="rating__title">How did we do?</h1>
+      <p class="rating__description">
         Please let us know how we did with your support request. All feedback is appreciated
         to help us improve our offering!
       </p>
+    </div>
 
-      <ul class="rating-group">
-        <li class="rating-value">1</li>
-        <li class="rating-value">2</li>
-        <li class="rating-value">3</li>
-        <li class="rating-value">4</li>
-        <li class="rating-value">5</li>
-      </ul>
-      <button class="rating-submit">Submit</button>
-    </section>
+    <form class="form">
+      <fieldset class="rating-group">
 
-    <dialog class="container done" id="done">
+        <div class="rating__option">
+          <input type="radio" name="rating" id="rating-1" class="rating-radio" value="1">
+          <label for="rating-1" class="rating__label">1</label>
+        </div>
 
-      <div class="done-image">
-        <img src="./images/illustration-thank-you.svg" alt="">
-      </div>
+        <div class="rating__option">
+          <input type="radio" name="rating" id="rating-2" class="rating-radio" value="2">
+          <label for="rating-2" class="rating__label">2</label>
+        </div>
 
-      <div class="done-info">
-        <p>You selected <span id="done-value">0</span> out of 5</p>
-      </div>
+        <div class="rating__option">
+          <input type="radio" name="rating" id="rating-3" class="rating-radio" value="3">
+          <label for="rating-3" class="rating__label">3</label>
+        </div>
 
-      <h2 class="done-title">Thank you!</h2>
-      <p class="done-description">
-        We appreciate you taking the time to give a rating. If you ever need more support,
-        don’t hesitate to get in touch!
-      </p>
-    </dialog>
+        <div class="rating__option">
+          <input type="radio" name="rating" id="rating-4" class="rating-radio" value="4">
+          <label for="rating-4" class="rating__label">4</label>
+        </div>
+
+        <div class="rating__option">
+          <input type="radio" name="rating" id="rating-5" class="rating-radio" value="5">
+          <label for="rating-5" class="rating__label">5</label>
+        </div>
+
+      </fieldset>
+      <button type="submit" class="rating-submit">Submit</button>
+    </form>
+
   </main>
 
-  <script src="./script/script.js"></script>
+  <dialog class="container done" id="done">
+
+    <div class="done-image">
+      <img src="./images/illustration-thank-you.svg" alt="illustration-thank-you">
+    </div>
+
+    <div class="done-info">
+      <p>You selected <span id="done-value">0</span> out of 5</p>
+    </div>
+
+    <h2 class="done-title">Thank you!</h2>
+    <p class="done-description">
+      We appreciate you taking the time to give a rating. If you ever need more support,
+      don’t hesitate to get in touch!
+    </p>
+  </dialog>
 </body>
 
 </html>

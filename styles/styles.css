@@ -10,21 +10,14 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
   font-family: "Overpass", sans-serif;
   background-color: #000;
-  font-size: 15px;
-}
-
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
+  font-size: 62.5%;
 }
 
 .container {
@@ -34,73 +27,94 @@ main {
     rgba(18, 20, 23, 1) 0%,
     rgba(37, 45, 55, 1) 100%
   );
-  padding: 2rem;
-  border-radius: 2rem;
-  width: 22%;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 32.7rem;
+  margin: 0 auto;
+  margin-top: 15.4rem;
+  margin-bottom: 15.4rem;
+  padding: 2.4rem;
+  padding-bottom: 3.2rem;
+}
+
+.rating-icon img {
+  display: block;
+  width: 100%;
 }
 
 .rating-icon {
   background-color: var(--dark-blue);
-  padding: 1rem;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
+  padding: 1.25rem;
+  width: 4rem;
+  max-width: 100%;
+  border-radius: 2rem;
 }
 
-.rating-title,
-.done-title {
+.rating-content {
+  margin-top: 1.96rem;
+}
+
+.rating__title {
+  font-size: 2.36rem;
   margin-top: 1rem;
   color: var(--white);
 }
 
-.rating-description {
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+.rating__description {
+  font-size: 1.4rem;
+  margin-top: 1.2rem;
   color: var(--medium-grey);
   line-height: 1.5;
 }
 
 .rating-group {
-  list-style-type: none;
+  border: 0;
   display: flex;
+  margin-top: 3rem;
+  margin-bottom: 2.4rem;
   justify-content: space-between;
-  margin: 2rem 0;
+  align-items: center;
 }
 
-.rating-value {
+.rating-radio {
+  display: none;
+}
+
+.rating__label {
   background-color: var(--dark-blue);
   color: var(--medium-grey);
-  padding: 1rem;
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
+  width: 4.1rem;
+  height: 4.1rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
-.rating-value:hover {
-  background-color: var(--orange);
-  color: hsl(0, 0%, 100%);
-}
-
-.rating-value:active,
-.active {
+.rating-radio:checked ~ .rating__label {
   background-color: var(--light-grey);
   color: var(--white);
 }
 
-.rating-submit {
-  outline: none;
-  border: none;
+.rating__label:hover {
   background-color: var(--orange);
   color: hsl(0, 0%, 100%);
+}
+
+.rating-submit {
+  border: 0;
+  outline: 0;
+  text-align: center;
+  background-color: var(--orange);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  border-radius: 2rem;
+  letter-spacing: 0.25rem;
+  border-radius: 2.5rem;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1.45rem 0;
 }
 
 .rating-submit:active {
@@ -108,51 +122,121 @@ main {
   color: var(--orange);
 }
 
+@media screen and (min-width: 800px) {
+  .container {
+    max-width: 41.1rem;
+    margin-top: 19.5rem;
+    margin-bottom: 19.5rem;
+    padding: 3.2rem;
+    padding-right: 3.8rem;
+    border-radius: 3rem;
+  }
+
+  .rating-icon {
+    width: 4.8rem;
+    border-radius: 3rem;
+    padding: 1.65rem;
+  }
+
+  .rating-content {
+    margin-top: 3.4rem;
+  }
+
+  .rating__title {
+    font-size: 2.76rem;
+  }
+
+  .rating__description {
+    font-size: 1.5rem;
+    margin-top: 1.1rem;
+  }
+
+  .rating__label {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+  }
+
+  .rating-group {
+    margin-bottom: 3.2rem;
+  }
+
+  .rating-submit {
+    font-size: 1.4rem;
+    padding: 1.4rem 0;
+  }
+}
+
 /* done dialog styles */
+
+.done {
+  text-align: center;
+  padding: 3.4rem 2rem 4rem;
+  border: none;
+  outline: none;
+  position: absolute;
+  inset: 0;
+}
+
+.done::backdrop {
+  background: #000;
+}
+
+.done-image img {
+  width: 100%;
+  max-width: 14.5rem;
+}
 
 .done-info {
   background-color: var(--dark-blue);
   color: var(--orange);
-  padding: 0.5rem 0;
-  width: 60%;
+  padding: 0.75rem 1.4rem;
+  display: inline-flex;
   border-radius: 1.5rem;
   margin: 0 auto;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 2.2rem;
+  margin-bottom: 2.6rem;
+  font-size: 1.4rem;
 }
 
-.done {
-  text-align: center;
-  padding: 3rem 2rem;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  outline: none;
+.done-title {
+  font-size: 2.4rem;
+  color: var(--white);
 }
 
 .done-description {
-  font-size: 0.93rem;
-  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  margin-top: 1.2rem;
   color: var(--medium-grey);
   line-height: 1.5;
 }
 
-@media (max-width: 375px) {
-  .container {
-    width: 73%;
-  }
-
-  .done::backdrop {
-    background-color: #000;
-  }
-
+@media screen and (min-width: 800px) {
   .done {
-    width: 74%;
+    padding: 4.5rem 3.4rem 5rem;
+  }
+
+  .done-image img {
+    max-width: 16.2rem;
+  }
+
+  .done-image {
+    padding-right: 0.7rem;
   }
 
   .done-info {
-    width: 70%;
+    margin-top: 3.1rem;
+    margin-bottom: 3.5rem;
+    padding: 0.6rem 1.8rem;
+    font-size: 1.52rem;
+  }
+
+  .done-title {
+    font-size: 2.7rem;
+  }
+
+  .done-description {
+    font-size: 1.5rem;
   }
 }
