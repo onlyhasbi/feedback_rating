@@ -109,17 +109,19 @@ body {
   text-align: center;
   background-color: var(--orange);
   color: hsl(0, 0%, 100%);
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   border-radius: 2.5rem;
   width: 100%;
   padding: 1.45rem 0;
+  font-family: "Overpass", sans-serif;
 }
 
-.rating-submit:active {
+.rating-submit:hover {
   background-color: var(--white);
   color: var(--orange);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 800px) {
